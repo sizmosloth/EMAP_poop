@@ -30,6 +30,7 @@ print("📨 Fetching last 20 emails from inbox...")
 # Fetch last 20 emails (read + unread)
 status, messages = mail.search(None, "ALL")
 email_ids = messages[0].split()[-20:]
+email_ids = list(reversed(email_ids))
 
 emails = []
 for idx, num in enumerate(email_ids, 1):
